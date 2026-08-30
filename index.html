@@ -8,6 +8,7 @@
 <title>Linea — Tools for the Web</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -39,12 +40,14 @@ body::before {
     z-index: -1;
 }
 
-/* NAV */
+
+/* NAVIGATION */
 
 nav {
     width: min(1150px, calc(100% - 40px));
     margin: auto;
     padding: 25px 0;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,6 +79,7 @@ nav {
     color: white;
 }
 
+
 /* HERO */
 
 .hero {
@@ -86,19 +90,29 @@ nav {
 
 .badge {
     display: inline-block;
+
     padding: 8px 14px;
+
     border-radius: 999px;
+
     border: 1px solid #292b39;
+
     background: #11121a;
+
     color: #a8a9ff;
+
     font-size: 13px;
+
     margin-bottom: 25px;
 }
 
 h1 {
     margin: 0;
+
     font-size: clamp(52px, 9vw, 92px);
+
     line-height: .94;
+
     letter-spacing: -6px;
 }
 
@@ -108,137 +122,207 @@ h1 span {
 
 .hero p {
     max-width: 650px;
+
     margin: 25px auto 0;
+
     color: #92949f;
+
     font-size: 18px;
+
     line-height: 1.65;
 }
 
+
+/* BUTTONS */
+
 .hero-buttons {
     margin-top: 35px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 12px;
+
     flex-wrap: wrap;
 }
 
 .button {
     padding: 15px 22px;
+
     border-radius: 12px;
+
     text-decoration: none;
+
     font-weight: 750;
+
     font-size: 14px;
+
     transition: .2s;
 }
 
 .primary {
     background: #7778ff;
+
     color: white;
-    box-shadow: 0 15px 40px rgba(119,120,255,.18);
+
+    box-shadow:
+        0 15px 40px rgba(119,120,255,.18);
 }
 
 .primary:hover {
     background: #898aff;
+
     transform: translateY(-3px);
 }
 
 .secondary {
     border: 1px solid #292b39;
+
     background: #11121a;
+
     color: #d0d1d8;
 }
 
 .secondary:hover {
     background: #191a23;
+
     transform: translateY(-3px);
 }
+
 
 /* TOOLS */
 
 .tools {
     width: min(1150px, calc(100% - 40px));
+
     margin: 150px auto;
 }
 
 .section-heading {
     text-align: center;
+
     margin-bottom: 40px;
 }
 
 .section-heading h2 {
     font-size: 35px;
+
     letter-spacing: -1.5px;
+
     margin: 0 0 10px;
 }
 
 .section-heading p {
     color: #777985;
+
     margin: 0;
 }
 
+
+/* GRID */
+
 .grid {
     display: grid;
+
     grid-template-columns:
         repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 18px;
 }
 
+
+/* CARDS */
+
 .card {
     position: relative;
+
     padding: 25px;
+
     min-height: 230px;
+
     background: #101117;
+
     border: 1px solid #232530;
+
     border-radius: 20px;
+
     transition: .25s;
+
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-7px);
+
     border-color: #3a3c52;
 }
 
 .card::after {
     content: "";
+
     position: absolute;
+
     width: 120px;
     height: 120px;
+
     right: -60px;
     bottom: -60px;
+
     background: #7778ff;
+
     filter: blur(60px);
+
     opacity: .08;
 }
+
+
+/* ICON */
 
 .icon {
     width: 48px;
     height: 48px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     border-radius: 13px;
+
     background: #191a27;
+
     font-size: 22px;
+
     margin-bottom: 20px;
 }
 
+
+/* COLOR EXTRACTOR */
+
 .card h3 {
     margin: 0 0 10px;
+
     font-size: 20px;
 }
 
 .card p {
     color: #858792;
+
     line-height: 1.6;
+
     font-size: 14px;
+
     margin: 0 0 20px;
 }
 
 .card-link {
     color: #898aff;
+
     text-decoration: none;
+
     font-size: 14px;
+
     font-weight: 750;
 }
 
@@ -246,25 +330,98 @@ h1 span {
     color: #aaaaff;
 }
 
-/* COMING SOON */
 
-.coming {
-    opacity: .65;
+/* BLANK CARDS */
+
+.blank-card {
+    cursor: default;
 }
 
-.coming .card-link {
-    color: #696b76;
+.blank-card:hover {
+    transform: none;
+
+    border-color: #232530;
 }
+
+.blank-card .icon {
+    background: #15161e;
+
+    color: #555764;
+}
+
+.blank-card::after {
+    display: none;
+}
+
+
+/* DATE */
+
+.release-date {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 8px 11px;
+
+    border-radius: 8px;
+
+    background: #191a27;
+
+    border: 1px solid #292b39;
+
+    color: #777985;
+
+    font-size: 12px;
+}
+
+.release-date strong {
+    color: #a8a9ff;
+
+    margin-left: 4px;
+}
+
+
+/* ABOUT */
+
+.about {
+    width: min(800px, calc(100% - 40px));
+
+    margin: 0 auto 130px;
+
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+}
+
+.about p {
+    color: #858792;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
 
 /* FOOTER */
 
 footer {
     border-top: 1px solid #1d1e26;
+
     padding: 30px 20px;
+
     text-align: center;
+
     color: #60626d;
+
     font-size: 13px;
 }
+
 
 /* MOBILE */
 
@@ -293,11 +450,17 @@ footer {
     .tools {
         margin-top: 110px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -320,6 +483,8 @@ footer {
 </nav>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
     <div class="badge">
@@ -336,6 +501,7 @@ footer {
         designed for creators, developers and anyone
         working with the web.
     </p>
+
 
     <div class="hero-buttons">
 
@@ -358,7 +524,13 @@ footer {
 </section>
 
 
-<section class="tools" id="tools">
+
+<!-- TOOLS -->
+
+<section
+    class="tools"
+    id="tools"
+>
 
     <div class="section-heading">
 
@@ -404,83 +576,53 @@ footer {
         </article>
 
 
-        <!-- HTML TOOLS -->
 
-        <article class="card coming">
+        <!-- BLANK TOOL 1 -->
+
+        <article class="card blank-card">
 
             <div class="icon">
-                💻
+                ?
             </div>
 
-            <h3>
-                HTML Tools
-            </h3>
-
-            <p>
-                Helpful tools for creating, formatting
-                and working with HTML.
-            </p>
-
-            <a
-                class="card-link"
-                href="#"
-            >
-                Coming Soon
-            </a>
+            <div class="release-date">
+                Planned for
+                <strong>15.08.2026</strong>
+            </div>
 
         </article>
 
 
-        <!-- IMAGE TOOLS -->
 
-        <article class="card coming">
+        <!-- BLANK TOOL 2 -->
+
+        <article class="card blank-card">
 
             <div class="icon">
-                🖼️
+                ?
             </div>
 
-            <h3>
-                Image Tools
-            </h3>
-
-            <p>
-                Simple browser-based tools for
-                working with images.
-            </p>
-
-            <a
-                class="card-link"
-                href="#"
-            >
-                Coming Soon
-            </a>
+            <div class="release-date">
+                Planned for
+                <strong>19.08.2026</strong>
+            </div>
 
         </article>
 
 
-        <!-- CODE TOOLS -->
 
-        <article class="card coming">
+        <!-- BLANK TOOL 3 -->
+
+        <article class="card blank-card">
 
             <div class="icon">
-                🧩
+                ?
             </div>
 
-            <h3>
-                Code Tools
-            </h3>
-
-            <p>
-                Utilities for developers who want to
-                work faster and cleaner.
-            </p>
-
-            <a
-                class="card-link"
-                href="#"
-            >
-                Coming Soon
-            </a>
+            <div class="release-date">
+                Planned for
+                <strong>01.09.2026</strong>
+            </div>
 
         </article>
 
@@ -490,28 +632,19 @@ footer {
 </section>
 
 
+
+<!-- ABOUT -->
+
 <section
+    class="about"
     id="about"
-    style="
-        width:min(800px,calc(100% - 40px));
-        margin:0 auto 130px;
-        text-align:center;
-    "
 >
 
-    <h2 style="
-        font-size:32px;
-        letter-spacing:-1px;
-        margin-bottom:12px;
-    ">
+    <h2>
         What is Linea?
     </h2>
 
-    <p style="
-        color:#858792;
-        line-height:1.7;
-        font-size:15px;
-    ">
+    <p>
         Linea is a collection of lightweight web tools
         built to be fast, simple and accessible.
         No complicated interfaces. Just tools that do
@@ -521,9 +654,15 @@ footer {
 </section>
 
 
+
+<!-- FOOTER -->
+
 <footer>
+
     © 2026 Linea — Built for the web.
+
 </footer>
+
 
 </body>
 </html>
