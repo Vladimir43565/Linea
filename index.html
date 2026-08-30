@@ -21,7 +21,7 @@
         body {
             font-family: Inter, Arial, sans-serif;
             background: #08090d;
-            color: #fff;
+            color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -29,12 +29,12 @@
         body::before {
             content: "";
             position: fixed;
-            width: 550px;
-            height: 550px;
-            background: #6d6eff;
-            filter: blur(180px);
+            width: 600px;
+            height: 600px;
+            background: #7778ff;
+            filter: blur(190px);
             opacity: 0.13;
-            top: -250px;
+            top: -300px;
             left: 50%;
             transform: translateX(-50%);
             pointer-events: none;
@@ -44,7 +44,6 @@
         /* NAVBAR */
 
         nav {
-            width: 100%;
             max-width: 1150px;
             margin: auto;
             padding: 25px;
@@ -56,68 +55,61 @@
         .logo {
             font-size: 23px;
             font-weight: 800;
-            letter-spacing: -0.8px;
+            letter-spacing: -1px;
         }
 
         .logo span {
             color: #8586ff;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            color: #9698a5;
+        nav a {
+            color: #999ba8;
             text-decoration: none;
             font-size: 14px;
             transition: 0.2s;
         }
 
-        .nav-links a:hover {
-            color: #fff;
+        nav a:hover {
+            color: #ffffff;
         }
 
         /* HERO */
 
         .hero {
-            max-width: 1000px;
-            margin: 115px auto 0;
+            max-width: 950px;
+            margin: 120px auto 0;
             padding: 0 25px;
             text-align: center;
         }
 
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
+            display: inline-block;
             padding: 8px 14px;
             border: 1px solid #292b39;
             background: #11121a;
             border-radius: 999px;
             color: #a8a9ff;
             font-size: 13px;
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: clamp(52px, 9vw, 92px);
+            font-size: clamp(52px, 9vw, 90px);
             line-height: 0.95;
             letter-spacing: -5px;
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         h1 span {
             color: #8586ff;
         }
 
-        .hero-description {
+        .description {
             max-width: 650px;
             margin: auto;
             color: #999ba8;
             font-size: 18px;
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
         /* BUTTONS */
@@ -131,9 +123,10 @@
         }
 
         .button {
-            text-decoration: none;
-            padding: 14px 22px;
+            display: inline-block;
+            padding: 15px 23px;
             border-radius: 12px;
+            text-decoration: none;
             font-size: 15px;
             font-weight: 700;
             transition: 0.2s;
@@ -146,19 +139,19 @@
         }
 
         .primary:hover {
-            transform: translateY(-3px);
             background: #898aff;
+            transform: translateY(-3px);
         }
 
         .secondary {
             background: #11121a;
             border: 1px solid #292b39;
-            color: #d4d5dc;
+            color: #d5d6dd;
         }
 
         .secondary:hover {
+            background: #181923;
             transform: translateY(-3px);
-            background: #171822;
         }
 
         /* TOOLS */
@@ -238,10 +231,6 @@
             color: #aaaaff;
         }
 
-        .coming {
-            opacity: 0.55;
-        }
-
         /* FOOTER */
 
         footer {
@@ -252,10 +241,7 @@
             font-size: 13px;
         }
 
-        /* MOBILE */
-
         @media (max-width: 600px) {
-
             .hero {
                 margin-top: 75px;
             }
@@ -264,12 +250,8 @@
                 letter-spacing: -3px;
             }
 
-            .hero-description {
+            .description {
                 font-size: 16px;
-            }
-
-            .nav-links {
-                gap: 15px;
             }
         }
     </style>
@@ -277,22 +259,16 @@
 
 <body>
 
-    <!-- NAVBAR -->
-
     <nav>
-
         <div class="logo">
             Line<span>a</span>
         </div>
 
-        <div class="nav-links">
-            <a href="#tools">Tools</a>
-        </div>
-
+        <a href="#tools">
+            Tools
+        </a>
     </nav>
 
-
-    <!-- HERO -->
 
     <main>
 
@@ -307,19 +283,18 @@
                 <span>Built for the web.</span>
             </h1>
 
-            <p class="hero-description">
-                Linea is a collection of simple and powerful tools
-                designed to make working with websites, code and
-                the web easier.
+            <p class="description">
+                Linea gives you simple and powerful tools for
+                working with websites, code and the web.
             </p>
 
             <div class="buttons">
 
                 <a
                     class="button primary"
-                    href="converter.html"
+                    href="https://vladimir43565.github.io/Linea-OtherWeb/"
                 >
-                    🚀 Website → HTML
+                    🌐 Website → HTML
                 </a>
 
                 <a
@@ -333,8 +308,6 @@
 
         </section>
 
-
-        <!-- TOOLS -->
 
         <section class="tools" id="tools">
 
@@ -351,8 +324,6 @@
 
             <div class="grid">
 
-                <!-- WEBSITE CONVERTER -->
-
                 <div class="card">
 
                     <div class="icon">
@@ -364,20 +335,20 @@
                     </h3>
 
                     <p>
-                        Enter a website URL and convert the page
+                        Paste a website URL and turn its interface
                         into downloadable HTML.
                     </p>
 
-                    <a href="converter.html">
+                    <a
+                        href="https://vladimir43565.github.io/Linea-OtherWeb/"
+                    >
                         Open Tool →
                     </a>
 
                 </div>
 
 
-                <!-- COLOR TOOLS -->
-
-                <div class="card coming">
+                <div class="card">
 
                     <div class="icon">
                         🎨
@@ -388,8 +359,8 @@
                     </h3>
 
                     <p>
-                        Create, convert and experiment with colors
-                        for your websites.
+                        Create and work with colors for your
+                        websites and projects.
                     </p>
 
                     <a href="#">
@@ -399,9 +370,7 @@
                 </div>
 
 
-                <!-- CODE FORMATTER -->
-
-                <div class="card coming">
+                <div class="card">
 
                     <div class="icon">
                         🧹
@@ -412,8 +381,8 @@
                     </h3>
 
                     <p>
-                        Format and clean your HTML, CSS and
-                        JavaScript code.
+                        Format and clean HTML, CSS and JavaScript
+                        code.
                     </p>
 
                     <a href="#">
@@ -423,9 +392,7 @@
                 </div>
 
 
-                <!-- URL TOOLS -->
-
-                <div class="card coming">
+                <div class="card">
 
                     <div class="icon">
                         🔗
@@ -453,42 +420,31 @@
     </main>
 
 
-    <!-- FOOTER -->
-
     <footer>
-
         © 2026 Linea. Built for the web.
-
     </footer>
 
 
     <script>
-
-        // Smooth scrolling
-
         document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-            link.addEventListener("click", function(event) {
+            link.addEventListener("click", event => {
 
-                const target =
-                    document.querySelector(
-                        this.getAttribute("href")
-                    );
+                const target = document.querySelector(
+                    link.getAttribute("href")
+                );
 
                 if (target) {
-
                     event.preventDefault();
 
                     target.scrollIntoView({
                         behavior: "smooth"
                     });
-
                 }
 
             });
 
         });
-
     </script>
 
 </body>
