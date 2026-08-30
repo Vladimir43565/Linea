@@ -1,0 +1,496 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linea — Web Tools</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #08090d;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 550px;
+            height: 550px;
+            background: #6d6eff;
+            filter: blur(180px);
+            opacity: 0.13;
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+        }
+
+        .logo span {
+            color: #8586ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #9698a5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1000px;
+            margin: 115px auto 0;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border: 1px solid #292b39;
+            background: #11121a;
+            border-radius: 999px;
+            color: #a8a9ff;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-size: clamp(52px, 9vw, 92px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: #8586ff;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
+            color: #999ba8;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            margin-top: 38px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: #7778ff;
+            color: white;
+            box-shadow: 0 12px 35px rgba(119, 120, 255, 0.2);
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            background: #898aff;
+        }
+
+        .secondary {
+            background: #11121a;
+            border: 1px solid #292b39;
+            color: #d4d5dc;
+        }
+
+        .secondary:hover {
+            transform: translateY(-3px);
+            background: #171822;
+        }
+
+        /* TOOLS */
+
+        .tools {
+            max-width: 1100px;
+            margin: 130px auto;
+            padding: 0 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #858792;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #101117;
+            border: 1px solid #20222d;
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #393b55;
+        }
+
+        .icon {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #191a27;
+            border-radius: 12px;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #858792;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #898aff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .card a:hover {
+            color: #aaaaff;
+        }
+
+        .coming {
+            opacity: 0.55;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #1c1d25;
+            text-align: center;
+            padding: 30px 20px;
+            color: #666874;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .hero {
+                margin-top: 75px;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Line<span>a</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#tools">Tools</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="badge">
+                ⚡ Welcome to Linea
+            </div>
+
+            <h1>
+                Simple tools.<br>
+                <span>Built for the web.</span>
+            </h1>
+
+            <p class="hero-description">
+                Linea is a collection of simple and powerful tools
+                designed to make working with websites, code and
+                the web easier.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="button primary"
+                    href="converter.html"
+                >
+                    🚀 Website → HTML
+                </a>
+
+                <a
+                    class="button secondary"
+                    href="#tools"
+                >
+                    Explore Tools
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOLS -->
+
+        <section class="tools" id="tools">
+
+            <div class="section-title">
+
+                <h2>Linea Tools</h2>
+
+                <p>
+                    Useful tools. No unnecessary complexity.
+                </p>
+
+            </div>
+
+
+            <div class="grid">
+
+                <!-- WEBSITE CONVERTER -->
+
+                <div class="card">
+
+                    <div class="icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Website → HTML
+                    </h3>
+
+                    <p>
+                        Enter a website URL and convert the page
+                        into downloadable HTML.
+                    </p>
+
+                    <a href="converter.html">
+                        Open Tool →
+                    </a>
+
+                </div>
+
+
+                <!-- COLOR TOOLS -->
+
+                <div class="card coming">
+
+                    <div class="icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Color Tools
+                    </h3>
+
+                    <p>
+                        Create, convert and experiment with colors
+                        for your websites.
+                    </p>
+
+                    <a href="#">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CODE FORMATTER -->
+
+                <div class="card coming">
+
+                    <div class="icon">
+                        🧹
+                    </div>
+
+                    <h3>
+                        Code Formatter
+                    </h3>
+
+                    <p>
+                        Format and clean your HTML, CSS and
+                        JavaScript code.
+                    </p>
+
+                    <a href="#">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- URL TOOLS -->
+
+                <div class="card coming">
+
+                    <div class="icon">
+                        🔗
+                    </div>
+
+                    <h3>
+                        URL Tools
+                    </h3>
+
+                    <p>
+                        Useful utilities for working with URLs
+                        and web addresses.
+                    </p>
+
+                    <a href="#">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Linea. Built for the web.
+
+    </footer>
+
+
+    <script>
+
+        // Smooth scrolling
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener("click", function(event) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
