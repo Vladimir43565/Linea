@@ -2,450 +2,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Linea — Web Tools</title>
+<title>Linea — Tools for the Web</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Inter, Arial, sans-serif;
-            background: #08090d;
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #08090d;
+    color: #fff;
+    font-family: Inter, Arial, sans-serif;
+}
 
-        body::before {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: #7778ff;
-            filter: blur(190px);
-            opacity: 0.13;
-            top: -300px;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
-            z-index: -1;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    left: 50%;
+    top: -450px;
+    transform: translateX(-50%);
+    background: #7778ff;
+    filter: blur(200px);
+    opacity: .13;
+    pointer-events: none;
+    z-index: -1;
+}
 
-        /* NAVBAR */
+/* NAV */
 
-        nav {
-            max-width: 1150px;
-            margin: auto;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+nav {
+    width: min(1150px, calc(100% - 40px));
+    margin: auto;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .logo {
-            font-size: 23px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
 
-        .logo span {
-            color: #8586ff;
-        }
+.logo span {
+    color: #8586ff;
+}
 
-        nav a {
-            color: #999ba8;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
 
-        nav a:hover {
-            color: #ffffff;
-        }
+.nav-links a {
+    color: #8e909c;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
 
-        /* HERO */
+.nav-links a:hover {
+    color: white;
+}
 
-        .hero {
-            max-width: 950px;
-            margin: 120px auto 0;
-            padding: 0 25px;
-            text-align: center;
-        }
+/* HERO */
 
-        .badge {
-            display: inline-block;
-            padding: 8px 14px;
-            border: 1px solid #292b39;
-            background: #11121a;
-            border-radius: 999px;
-            color: #a8a9ff;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
+.hero {
+    width: min(900px, calc(100% - 40px));
+    margin: 120px auto 0;
+    text-align: center;
+}
 
-        h1 {
-            font-size: clamp(52px, 9vw, 90px);
-            line-height: 0.95;
-            letter-spacing: -5px;
-            margin-bottom: 25px;
-        }
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #292b39;
+    background: #11121a;
+    color: #a8a9ff;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
 
-        h1 span {
-            color: #8586ff;
-        }
+h1 {
+    margin: 0;
+    font-size: clamp(52px, 9vw, 92px);
+    line-height: .94;
+    letter-spacing: -6px;
+}
 
-        .description {
-            max-width: 650px;
-            margin: auto;
-            color: #999ba8;
-            font-size: 18px;
-            line-height: 1.6;
-        }
+h1 span {
+    color: #8586ff;
+}
 
-        /* BUTTONS */
+.hero p {
+    max-width: 650px;
+    margin: 25px auto 0;
+    color: #92949f;
+    font-size: 18px;
+    line-height: 1.65;
+}
 
-        .buttons {
-            margin-top: 38px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
-        .button {
-            display: inline-block;
-            padding: 15px 23px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
+.button {
+    padding: 15px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 750;
+    font-size: 14px;
+    transition: .2s;
+}
 
-        .primary {
-            background: #7778ff;
-            color: white;
-            box-shadow: 0 12px 35px rgba(119, 120, 255, 0.2);
-        }
+.primary {
+    background: #7778ff;
+    color: white;
+    box-shadow: 0 15px 40px rgba(119,120,255,.18);
+}
 
-        .primary:hover {
-            background: #898aff;
-            transform: translateY(-3px);
-        }
+.primary:hover {
+    background: #898aff;
+    transform: translateY(-3px);
+}
 
-        .secondary {
-            background: #11121a;
-            border: 1px solid #292b39;
-            color: #d5d6dd;
-        }
+.secondary {
+    border: 1px solid #292b39;
+    background: #11121a;
+    color: #d0d1d8;
+}
 
-        .secondary:hover {
-            background: #181923;
-            transform: translateY(-3px);
-        }
+.secondary:hover {
+    background: #191a23;
+    transform: translateY(-3px);
+}
 
-        /* TOOLS */
+/* TOOLS */
 
-        .tools {
-            max-width: 1100px;
-            margin: 130px auto;
-            padding: 0 25px;
-        }
+.tools {
+    width: min(1150px, calc(100% - 40px));
+    margin: 150px auto;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 38px;
-        }
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-        .section-title h2 {
-            font-size: 34px;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-        }
+.section-heading h2 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+    margin: 0 0 10px;
+}
 
-        .section-title p {
-            color: #858792;
-        }
+.section-heading p {
+    color: #777985;
+    margin: 0;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 18px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
 
-        .card {
-            background: #101117;
-            border: 1px solid #20222d;
-            border-radius: 18px;
-            padding: 25px;
-            transition: 0.25s;
-        }
+.card {
+    position: relative;
+    padding: 25px;
+    min-height: 230px;
+    background: #101117;
+    border: 1px solid #232530;
+    border-radius: 20px;
+    transition: .25s;
+    overflow: hidden;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: #393b55;
-        }
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #3a3c52;
+}
 
-        .icon {
-            width: 46px;
-            height: 46px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #191a27;
-            border-radius: 12px;
-            font-size: 22px;
-            margin-bottom: 18px;
-        }
+.card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: -60px;
+    bottom: -60px;
+    background: #7778ff;
+    filter: blur(60px);
+    opacity: .08;
+}
 
-        .card h3 {
-            font-size: 19px;
-            margin-bottom: 10px;
-        }
+.icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #191a27;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 
-        .card p {
-            color: #858792;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
 
-        .card a {
-            color: #898aff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-        }
+.card p {
+    color: #858792;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 0 0 20px;
+}
 
-        .card a:hover {
-            color: #aaaaff;
-        }
+.card-link {
+    color: #898aff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 750;
+}
 
-        /* FOOTER */
+.card-link:hover {
+    color: #aaaaff;
+}
 
-        footer {
-            border-top: 1px solid #1c1d25;
-            text-align: center;
-            padding: 30px 20px;
-            color: #666874;
-            font-size: 13px;
-        }
+/* COMING SOON */
 
-        @media (max-width: 600px) {
-            .hero {
-                margin-top: 75px;
-            }
+.coming {
+    opacity: .65;
+}
 
-            h1 {
-                letter-spacing: -3px;
-            }
+.coming .card-link {
+    color: #696b76;
+}
 
-            .description {
-                font-size: 16px;
-            }
-        }
-    </style>
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #1d1e26;
+    padding: 30px 20px;
+    text-align: center;
+    color: #60626d;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    nav {
+        padding-top: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 80px;
+    }
+
+    h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .tools {
+        margin-top: 110px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">
-            Line<span>a</span>
-        </div>
+<nav>
+
+    <div class="logo">
+        Line<span>a</span>
+    </div>
+
+    <div class="nav-links">
 
         <a href="#tools">
             Tools
         </a>
-    </nav>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+</nav>
 
 
-    <main>
+<section class="hero">
 
-        <section class="hero">
+    <div class="badge">
+        ⚡ Welcome to Linea
+    </div>
 
-            <div class="badge">
-                ⚡ Welcome to Linea
+    <h1>
+        Tools that make<br>
+        <span>the web easier.</span>
+    </h1>
+
+    <p>
+        A collection of simple, fast and useful tools
+        designed for creators, developers and anyone
+        working with the web.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a
+            class="button primary"
+            href="#tools"
+        >
+            Explore Tools ↓
+        </a>
+
+        <a
+            class="button secondary"
+            href="https://vladimir43565.github.io/Linea-OtherWeb/"
+        >
+            Open Color Extractor
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="tools" id="tools">
+
+    <div class="section-heading">
+
+        <h2>
+            Linea Tools
+        </h2>
+
+        <p>
+            Pick a tool and get straight to work.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <!-- COLOR EXTRACTOR -->
+
+        <article class="card">
+
+            <div class="icon">
+                🎨
             </div>
 
-            <h1>
-                Simple tools.<br>
-                <span>Built for the web.</span>
-            </h1>
+            <h3>
+                Color Extractor
+            </h3>
 
-            <p class="description">
-                Linea gives you simple and powerful tools for
-                working with websites, code and the web.
+            <p>
+                Upload an image or video and extract
+                its dominant colors, HEX, RGB and HSL
+                values.
             </p>
 
-            <div class="buttons">
+            <a
+                class="card-link"
+                href="https://vladimir43565.github.io/Linea-OtherWeb/"
+            >
+                Open Tool →
+            </a>
 
-                <a
-                    class="button primary"
-                    href="https://vladimir43565.github.io/Linea-OtherWeb/"
-                >
-                    🌐 Website → HTML
-                </a>
+        </article>
 
-                <a
-                    class="button secondary"
-                    href="#tools"
-                >
-                    Explore Tools
-                </a>
 
+        <!-- HTML TOOLS -->
+
+        <article class="card coming">
+
+            <div class="icon">
+                💻
             </div>
 
-        </section>
+            <h3>
+                HTML Tools
+            </h3>
+
+            <p>
+                Helpful tools for creating, formatting
+                and working with HTML.
+            </p>
+
+            <a
+                class="card-link"
+                href="#"
+            >
+                Coming Soon
+            </a>
+
+        </article>
 
 
-        <section class="tools" id="tools">
+        <!-- IMAGE TOOLS -->
 
-            <div class="section-title">
+        <article class="card coming">
 
-                <h2>Linea Tools</h2>
-
-                <p>
-                    Useful tools. No unnecessary complexity.
-                </p>
-
+            <div class="icon">
+                🖼️
             </div>
 
+            <h3>
+                Image Tools
+            </h3>
 
-            <div class="grid">
+            <p>
+                Simple browser-based tools for
+                working with images.
+            </p>
 
-                <div class="card">
+            <a
+                class="card-link"
+                href="#"
+            >
+                Coming Soon
+            </a>
 
-                    <div class="icon">
-                        🌐
-                    </div>
-
-                    <h3>
-                        Website → HTML
-                    </h3>
-
-                    <p>
-                        Paste a website URL and turn its interface
-                        into downloadable HTML.
-                    </p>
-
-                    <a
-                        href="https://vladimir43565.github.io/Linea-OtherWeb/"
-                    >
-                        Open Tool →
-                    </a>
-
-                </div>
+        </article>
 
 
-                <div class="card">
+        <!-- CODE TOOLS -->
 
-                    <div class="icon">
-                        🎨
-                    </div>
+        <article class="card coming">
 
-                    <h3>
-                        Color Tools
-                    </h3>
-
-                    <p>
-                        Create and work with colors for your
-                        websites and projects.
-                    </p>
-
-                    <a href="#">
-                        Coming Soon
-                    </a>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="icon">
-                        🧹
-                    </div>
-
-                    <h3>
-                        Code Formatter
-                    </h3>
-
-                    <p>
-                        Format and clean HTML, CSS and JavaScript
-                        code.
-                    </p>
-
-                    <a href="#">
-                        Coming Soon
-                    </a>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="icon">
-                        🔗
-                    </div>
-
-                    <h3>
-                        URL Tools
-                    </h3>
-
-                    <p>
-                        Useful utilities for working with URLs
-                        and web addresses.
-                    </p>
-
-                    <a href="#">
-                        Coming Soon
-                    </a>
-
-                </div>
-
+            <div class="icon">
+                🧩
             </div>
 
-        </section>
+            <h3>
+                Code Tools
+            </h3>
 
-    </main>
+            <p>
+                Utilities for developers who want to
+                work faster and cleaner.
+            </p>
+
+            <a
+                class="card-link"
+                href="#"
+            >
+                Coming Soon
+            </a>
+
+        </article>
 
 
-    <footer>
-        © 2026 Linea. Built for the web.
-    </footer>
+    </div>
+
+</section>
 
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
+<section
+    id="about"
+    style="
+        width:min(800px,calc(100% - 40px));
+        margin:0 auto 130px;
+        text-align:center;
+    "
+>
 
-            link.addEventListener("click", event => {
+    <h2 style="
+        font-size:32px;
+        letter-spacing:-1px;
+        margin-bottom:12px;
+    ">
+        What is Linea?
+    </h2>
 
-                const target = document.querySelector(
-                    link.getAttribute("href")
-                );
+    <p style="
+        color:#858792;
+        line-height:1.7;
+        font-size:15px;
+    ">
+        Linea is a collection of lightweight web tools
+        built to be fast, simple and accessible.
+        No complicated interfaces. Just tools that do
+        what they need to do.
+    </p>
 
-                if (target) {
-                    event.preventDefault();
+</section>
 
-                    target.scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
 
-            });
-
-        });
-    </script>
+<footer>
+    © 2026 Linea — Built for the web.
+</footer>
 
 </body>
 </html>
