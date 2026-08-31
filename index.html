@@ -41,7 +41,9 @@ body::before {
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
     width: min(1150px, calc(100% - 40px));
@@ -80,7 +82,9 @@ nav {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     width: min(900px, calc(100% - 40px));
@@ -133,7 +137,9 @@ h1 span {
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons {
     margin-top: 35px;
@@ -191,7 +197,9 @@ h1 span {
 }
 
 
-/* TOOLS */
+/* =========================
+   TOOLS
+========================= */
 
 .tools {
     width: min(1150px, calc(100% - 40px));
@@ -220,7 +228,9 @@ h1 span {
 }
 
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
 
 .grid {
     display: grid;
@@ -232,7 +242,9 @@ h1 span {
 }
 
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .card {
     position: relative;
@@ -277,7 +289,9 @@ h1 span {
 }
 
 
-/* ICON */
+/* =========================
+   ICON
+========================= */
 
 .icon {
     width: 48px;
@@ -298,7 +312,9 @@ h1 span {
 }
 
 
-/* COLOR EXTRACTOR */
+/* =========================
+   CARD CONTENT
+========================= */
 
 .card h3 {
     margin: 0 0 10px;
@@ -331,7 +347,37 @@ h1 span {
 }
 
 
-/* BLANK CARDS */
+/* =========================
+   NEW TOOL BADGE
+========================= */
+
+.new-badge {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    padding: 6px 9px;
+
+    border-radius: 999px;
+
+    background: #1c1d2d;
+
+    border: 1px solid #383a58;
+
+    color: #a8a9ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================
+   BLANK CARDS
+========================= */
 
 .blank-card {
     cursor: default;
@@ -354,7 +400,9 @@ h1 span {
 }
 
 
-/* DATE */
+/* =========================
+   DATE
+========================= */
 
 .release-date {
     display: inline-block;
@@ -381,7 +429,9 @@ h1 span {
 }
 
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about {
     width: min(800px, calc(100% - 40px));
@@ -408,7 +458,9 @@ h1 span {
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #1d1e26;
@@ -423,7 +475,9 @@ footer {
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px) {
 
@@ -548,7 +602,7 @@ footer {
     <div class="grid">
 
 
-        <!-- COLOR EXTRACTOR -->
+        <!-- TOOL 1 — COLOR EXTRACTOR -->
 
         <article class="card">
 
@@ -577,7 +631,40 @@ footer {
 
 
 
-        <!-- BLANK TOOL 1 -->
+        <!-- TOOL 2 — LINEA PRO IMAGE EDITOR -->
+
+        <article class="card">
+
+            <div class="new-badge">
+                NEW
+            </div>
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                Linea Pro Image Editor
+            </h3>
+
+            <p>
+                Edit images directly in your browser
+                with camera looks, adjustments, effects,
+                filters and image export.
+            </p>
+
+            <a
+                class="card-link"
+                href="https://vladimir43565.github.io/Linea-Pro-Image-Editor/"
+            >
+                Open Tool →
+            </a>
+
+        </article>
+
+
+
+        <!-- BLANK TOOL 3 -->
 
         <article class="card blank-card">
 
@@ -594,7 +681,7 @@ footer {
 
 
 
-        <!-- BLANK TOOL 2 -->
+        <!-- BLANK TOOL 4 -->
 
         <article class="card blank-card">
 
@@ -611,7 +698,7 @@ footer {
 
 
 
-        <!-- BLANK TOOL 3 -->
+        <!-- BLANK TOOL 5 -->
 
         <article class="card blank-card">
 
